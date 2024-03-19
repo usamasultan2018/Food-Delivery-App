@@ -1,6 +1,8 @@
-import 'food_model.dart';
+import 'package:flutter/material.dart';
 
-class RestaurantModel {
+import '../../model/food_model.dart';
+
+class RestaurantController extends ChangeNotifier {
   final List<FoodModel> _menu = [
     FoodModel(category: FoodCategory.burgers,
         availableAddon: [
@@ -86,7 +88,7 @@ class RestaurantModel {
         ],
         name: "Cheesy Garlic Bread",
         description: "Warm and crispy garlic breadsticks topped with melted cheese and served with marinara sauce for dipping.",
-        imagePath: "assets/sides/side_1.jpg",
+        imagePath: "assets/sides/sides_1.jpg",
         price: 5.99
     ),
     FoodModel(

@@ -5,6 +5,7 @@ import 'package:food_delivery_app/themes/light_mode.dart';
 import 'package:food_delivery_app/view/auth/login_or_signup.dart';
 import 'package:food_delivery_app/view/login/login_screen.dart';
 import 'package:food_delivery_app/view/sign_up/sign_up_screen.dart';
+import 'package:food_delivery_app/view_model/restaurant_controller/restaurant_controller.dart';
 import 'package:food_delivery_app/view_model/theme/theme_controller.dart';
 import 'package:provider/provider.dart';
 
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
 
       providers: [
         ChangeNotifierProvider(create: (_)=>ThemeController()),
+        ChangeNotifierProvider(create: (_)=>RestaurantController()),
       ],
       child:Consumer<ThemeController>(
         builder: (BuildContext context, ThemeController value, Widget? child) {
