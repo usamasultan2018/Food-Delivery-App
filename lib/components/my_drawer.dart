@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/components/my_drawer_tiles.dart';
+import 'package:food_delivery_app/view/setting/setting_screen.dart';
+
 class MyDrawer extends StatefulWidget {
   const MyDrawer({super.key});
 
@@ -16,8 +18,9 @@ class _MyDrawerState extends State<MyDrawer> {
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 100.0),
-            child: Icon(Icons.lock_open_rounded,
-            size: 40,
+            child: Icon(
+              Icons.lock_open_rounded,
+              size: 40,
               color: Theme.of(context).colorScheme.inversePrimary,
             ),
           ),
@@ -27,10 +30,29 @@ class _MyDrawerState extends State<MyDrawer> {
               color: Theme.of(context).colorScheme.secondary,
             ),
           ),
-          MyDrawerTiles(text: "H O M E ", iconData: Icons.home),
-          MyDrawerTiles(text: "S E T T I N G S ", iconData: Icons.settings),
+          MyDrawerTiles(
+            onTap: (){
+              Navigator.pop(context);
+            },
+            text: "H O M E ",
+            iconData: Icons.home,
+          ),
+          MyDrawerTiles(
+            onTap: (){
+              Navigator.pop(context);
+              Navigator.push(context, MaterialPageRoute(builder: (ctx){
+                return SettingScreen();
+              }));
+            },
+            text: "S E T T I N G S ",
+            iconData: Icons.settings,
+          ),
           Spacer(),
-          MyDrawerTiles(text: "L O G O U T ", iconData: Icons.logout),
+          MyDrawerTiles(
+            text: "L O G O U T ",
+            iconData: Icons.logout,
+          ),
+          SizedBox(height: 25,),
         ],
       ),
     );

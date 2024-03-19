@@ -14,6 +14,7 @@ class ThemeController extends ChangeNotifier{
   void toggleTheme(){
     if(_themeData == lightMode){
       _themeData = darkMode;
+      notifyListeners();
     }
     else{
       themeData = lightMode;
